@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>For Juii 💖</title>
+  <title>For Juii 🤍✨</title>
+
   <style>
     body {
       height: 100vh;
@@ -10,29 +11,56 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      background: linear-gradient(135deg, #ff5f6d, #ffc371);
       font-family: 'Segoe UI', sans-serif;
       overflow: hidden;
     }
 
+    .heart {
+      position: absolute;
+      font-size: 22px;
+      animation: float 6s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+    }
+
     .card {
       background: white;
-      padding: 35px;
-      border-radius: 20px;
+      padding: 40px;
+      border-radius: 25px;
       text-align: center;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      z-index: 2;
     }
 
     h1 {
       color: #ff3366;
-      margin-bottom: 20px;
+      font-size: 32px;
+    }
+
+    h2 {
+      color: #444;
+      margin-bottom: 25px;
     }
 
     button {
-      padding: 12px 25px;
+      padding: 12px 26px;
       font-size: 18px;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
       margin: 10px;
     }
@@ -50,16 +78,34 @@
 </head>
 <body>
 
-  <!-- Romantic Music -->
-  <audio autoplay loop>
-    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
-  </audio>
+  <!-- 🎵 YouTube background music (Ek Tu Hi Yaar Mera) -->
+  <iframe
+    width="0"
+    height="0"
+    src="https://www.youtube.com/embed/KxwuyP6Xn6k?autoplay=1&loop=1&playlist=KxwuyP6Xn6k"
+    frameborder="0"
+    allow="autoplay"
+    allowfullscreen>
+  </iframe>
+
+  <!-- Floating hearts -->
+  <script>
+    const emojis = ["💖","💕","💘","🤍","❤️","✨"];
+    for (let i = 0; i < 25; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+      document.body.appendChild(heart);
+    }
+  </script>
 
   <div class="card">
-    <h1>Juii 💖</h1>
-    <h2>Will you be my Valentine? 💌</h2>
-    <button id="yes" onclick="yesClick()">Yes ❤️</button>
-    <button id="no" onmouseover="moveNo()">No 💔</button>
+    <h1>Juii 🤍✨</h1>
+    <h2>Will you be my best friend forever? ♾️🥹</h2>
+    <button id="yes" onclick="yesClick()">Yes 🤍💫</button>
+    <button id="no" onmouseover="moveNo()">No 😜</button>
   </div>
 
   <script>
@@ -74,10 +120,11 @@
     function yesClick() {
       document.body.innerHTML = `
         <div style="text-align:center;color:white;">
-          <h1 style="font-size:42px;">Yayyy Juii 💖😍</h1>
-          <p style="font-size:22px;">
-            You just made me the happiest person ❤️<br>
-            Happy Valentine’s Day 💘
+          <h1 style="font-size:44px;">Yayyy Juii 🤍🥰</h1>
+          <p style="font-size:24px;">
+            Best friends forever ♾️✨<br>
+            Ek tu hi yaar mera 🤍🎵<br><br>
+            Always with you 💖
           </p>
         </div>
       `;
